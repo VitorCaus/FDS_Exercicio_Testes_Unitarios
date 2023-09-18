@@ -58,20 +58,20 @@ public class BarcaTest {
     @Test
     public void testeOcuparJaOcupado(){
         String assento = "F25A02";
-        barca.ocupaLugarSemVerificacao(25, 21);
+        barca.ocupaLugarSemVerificacao(25, 2);
         int retorno = barca.ocupaLugar(assento);
         Assertions.assertEquals(1, retorno);
     }
 
     @Test
     public void testePesoPrimeiros100(){
-        for(int i = 1; i<21; i++){//ocupando 80 assentos no inicio
-            for(int j = 1; j < 5; j++){
+        for(int i = 1; i<=20; i++){//ocupando 80 assentos no inicio
+            for(int j = 1; j <=4; j++){
                 barca.ocupaLugarSemVerificacao(i, j);
             }
         }
 
-        String assento = "F40A12";
+        String assento = "F40A19";
         int retorno = barca.ocupaLugar(assento);
         Assertions.assertEquals(2, retorno);
     }
