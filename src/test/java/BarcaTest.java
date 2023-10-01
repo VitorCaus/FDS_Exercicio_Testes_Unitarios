@@ -43,7 +43,7 @@ public class BarcaTest {
 
     @Test 
     public void testePartBlockPeso100Proximos(){
-        for(int i = 1; i<=20; i++){//ocupando 100 assentos no inicio
+        for(int i = 1; i<=20; i++){//ocupando 80 assentos no inicio
             for(int j = 1; j <=4; j++){
                 barca.ocupaLugarSemVerificacao(i, j);
             }
@@ -74,7 +74,7 @@ public class BarcaTest {
     @Test 
     public void testePartLugarJaOcupado(){
         
-        String assento = "F10A10 ";
+        String assento = "F10A10";
         barca.ocupaLugarSemVerificacao(10, 10);
         int retorno = barca.ocupaLugar(assento);
         Assertions.assertEquals(1, retorno);
@@ -83,7 +83,7 @@ public class BarcaTest {
 
     @Test 
     public void testePartFilaNula(){
-        String assento = "F00A11 ";
+        String assento = "F00A11";
         int retorno = barca.ocupaLugar(assento);
         Assertions.assertEquals(0, retorno);
     }
@@ -91,7 +91,7 @@ public class BarcaTest {
 
     @Test 
     public void testePartAssentoNulo(){
-        String assento = "F19A00 ";
+        String assento = "F19A00";
         int retorno = barca.ocupaLugar(assento);
         Assertions.assertEquals(0, retorno);
     }
@@ -99,7 +99,7 @@ public class BarcaTest {
 
     @Test 
     public void testePartFila1Digito(){
-        String assento = "F3A05 ";
+        String assento = "F3A05";
         int retorno = barca.ocupaLugar(assento);
         Assertions.assertEquals(0, retorno);
     }
@@ -107,7 +107,7 @@ public class BarcaTest {
 
     @Test 
     public void testePartAssento1Digito(){
-        String assento = "F12A9 ";
+        String assento = "F12A9";
         int retorno = barca.ocupaLugar(assento);
         Assertions.assertEquals(0, retorno);
     }
@@ -120,7 +120,7 @@ public class BarcaTest {
                 barca.ocupaLugarSemVerificacao(i, j);
             }
         }
-        String assento = "F80A10 ";
+        String assento = "F80A10";
         int retorno = barca.ocupaLugar(assento);
         Assertions.assertEquals(0, retorno);
     }
@@ -128,7 +128,7 @@ public class BarcaTest {
 
     @Test 
     public void testePartAssentoAcimaLimite(){
-        String assento = "F16A31 ";
+        String assento = "F16A31";
         int retorno = barca.ocupaLugar(assento);
         Assertions.assertEquals(0, retorno);
     }
@@ -156,6 +156,7 @@ public class BarcaTest {
     @Test
     public void testeVLAssentoOcupado(){
         String assento = "F10A10";
+        barca.ocupaLugarSemVerificacao(10, 10);
         int retorno = barca.ocupaLugar(assento);
         Assertions.assertEquals(1, retorno);
 
@@ -178,7 +179,7 @@ public class BarcaTest {
     }
 
     @Test
-    public void testeVLBlockPeso100PrimeirosOffP(){
+    public void testeVLBlockPeso100PrimeirosOffPoint(){
         for(int i = 1; i<=20; i++){//ocupando 80 assentos no inicio
             for(int j = 1; j <=4; j++){
                 barca.ocupaLugarSemVerificacao(i, j);
@@ -191,7 +192,7 @@ public class BarcaTest {
     }
 
     @Test
-    public void testeVLBlockPeso100PrimeirosOutP(){
+    public void testeVLBlockPeso100PrimeirosOutPoint(){
         for(int i = 1; i<=20; i++){//ocupando 80 assentos no inicio
             for(int j = 1; j <=4; j++){
                 barca.ocupaLugarSemVerificacao(i, j);
@@ -217,7 +218,7 @@ public class BarcaTest {
     }
 
     @Test
-    public void testeVLFilaAcima60OffP(){
+    public void testeVLFilaAcima60OffPoint(){
         String assento = "F61A10";
         int retorno = barca.ocupaLugar(assento);
         Assertions.assertEquals(0, retorno);
@@ -226,7 +227,7 @@ public class BarcaTest {
 
 
     @Test
-    public void testeVLFilaAcima60OutP(){
+    public void testeVLFilaAcima60OutPoint(){
         String assento = "F70A10";
         int retorno = barca.ocupaLugar(assento);
         Assertions.assertEquals(0, retorno);
@@ -264,7 +265,7 @@ public class BarcaTest {
     }
 
     @Test
-    public void testeVLOcupadoDemaisPass(){
+    public void testeVLOcupadoDemaisPassageiros(){
         for(int i = 1; i<=20; i++){//ocupando 100 assentos no inicio
             for(int j = 1; j <=5; j++){
                 barca.ocupaLugarSemVerificacao(i, j);
@@ -285,7 +286,7 @@ public class BarcaTest {
     }
 
     @Test
-    public void testeVLAssentoAcima20OffP(){
+    public void testeVLAssentoAcima20OffPoint(){
         for(int i = 1; i<=20; i++){//ocupando 100 assentos no inicio
             for(int j = 1; j <=5; j++){
                 barca.ocupaLugarSemVerificacao(i, j);
@@ -298,7 +299,7 @@ public class BarcaTest {
     }
 
     @Test
-    public void testeVLAssentoAcima20OutP(){
+    public void testeVLAssentoAcima20OutPoint(){
         for(int i = 1; i<=20; i++){//ocupando 100 assentos no inicio
             for(int j = 1; j <=5; j++){
                 barca.ocupaLugarSemVerificacao(i, j);
